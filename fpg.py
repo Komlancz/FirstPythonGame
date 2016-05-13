@@ -101,6 +101,7 @@ def forward():
     time.sleep(speed)
 
 def start():
+    win.clear()
     mess1="   #######    ###     ##       ####       ##     ##  ###########"
     mess2=" ##      ##   ####    ##      ##  ##      ##    ##   ##         "
     mess3="##        ##  ## ##   ##      ##  ##      ##   ##    ##         "
@@ -153,47 +154,51 @@ def game():
     gameover()
 
 def gameover():
+    global q
     win.clear()
+    while q != ord("r"):
+        q = win.getch()
+        pnts = 'You got ' + str(points) + ' points!'
+        message1 ="     #######      ########     ###       ###  ########### "
+        message2 ="   ##      ##     ##    ##     ####     ####  ##          "
+        message3 ="  ##             ##      ##    ##  ## ##  ##  ##          "
+        message4 =" ##              ##########    ##   ###   ##  ########### "
+        message5 =" ##     ######  ##        ##   ##         ##  ########### "
+        message6 ="  ##        ##  ##        ##   ##         ##  ##          "
+        message7 ="   ##      ##  ##          ##  ##         ##  ##          "
+        message8 ="    ########   ##          ##  ##         ##  ########### "
+        message9 ="                                                          "
+        message10 ="     ########   ##          ##  ###########   #########   "
+        message11 ="    ##      ##  ##          ##  ##            ##      ##  "
+        message12 ="   ##        ##  ##        ##   ##            ##       ## "
+        message13 ="  ##          ## ##        ##   ###########   ##      ##  "
+        message14 ="  ##          ##  ##      ##    ###########   #########   "
+        message15 ="   ##        ##    ##    ##     ##            ##      ##  "
+        message16 ="    ##      ##      ##  ##      ##            ##       ## "
+        message17 ="     ########        ####       ###########   ##        ##"
 
-    pnts = 'You got ' + str(points) + ' points!'
-    message1 ="     #######      ########     ###       ###  ########### "
-    message2 ="   ##      ##     ##    ##     ####     ####  ##          "
-    message3 ="  ##             ##      ##    ##  ## ##  ##  ##          "
-    message4 =" ##              ##########    ##   ###   ##  ########### "
-    message5 =" ##     ######  ##        ##   ##         ##  ########### "
-    message6 ="  ##        ##  ##        ##   ##         ##  ##          "
-    message7 ="   ##      ##  ##          ##  ##         ##  ##          "
-    message8 ="    ########   ##          ##  ##         ##  ########### "
-    message9 ="                                                          "
-    message10 ="     ########   ##          ##  ###########   #########   "
-    message11 ="    ##      ##  ##          ##  ##            ##      ##  "
-    message12 ="   ##        ##  ##        ##   ##            ##       ## "
-    message13 ="  ##          ## ##        ##   ###########   ##      ##  "
-    message14 ="  ##          ##  ##      ##    ###########   #########   "
-    message15 ="   ##        ##    ##    ##     ##            ##      ##  "
-    message16 ="    ##      ##      ##  ##      ##            ##       ## "
-    message17 ="     ########        ####       ###########   ##        ##"
-
-    win.addstr(int(border[0]/2)+10, int((int(border[1])-len(pnts))//2), pnts, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-8, int((int(border[1])-len(message1))//2), message1, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-7, int((int(border[1])-len(message2))//2), message2, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-6, int((int(border[1])-len(message3))//2), message3, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-5, int((int(border[1])-len(message4))//2), message4, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-4, int((int(border[1])-len(message5))//2), message5, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-3, int((int(border[1])-len(message6))//2), message6, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-2, int((int(border[1])-len(message7))//2), message7, curses.A_BOLD)
-    win.addstr(int(border[0]/2)-1, int((int(border[1])-len(message8))//2), message8, curses.A_BOLD)
-    win.addstr(int(border[0]/2), int((int(border[1])-len(message9))//2), message9, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+1, int((int(border[1])-len(message10))//2), message10, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+2, int((int(border[1])-len(message11))//2), message11, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+3, int((int(border[1])-len(message12))//2), message12, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+4, int((int(border[1])-len(message13))//2), message13, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+5, int((int(border[1])-len(message14))//2), message14, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+6, int((int(border[1])-len(message15))//2), message15, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+7, int((int(border[1])-len(message16))//2), message16, curses.A_BOLD)
-    win.addstr(int(border[0]/2)+8, int((int(border[1])-len(message17))//2), message17, curses.A_BOLD)
-    win.refresh()
-    time.sleep(4)
+        win.addstr(int(border[0]/2)+10, int((int(border[1])-len(pnts))//2), pnts, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-8, int((int(border[1])-len(message1))//2), message1, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-7, int((int(border[1])-len(message2))//2), message2, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-6, int((int(border[1])-len(message3))//2), message3, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-5, int((int(border[1])-len(message4))//2), message4, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-4, int((int(border[1])-len(message5))//2), message5, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-3, int((int(border[1])-len(message6))//2), message6, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-2, int((int(border[1])-len(message7))//2), message7, curses.A_BOLD)
+        win.addstr(int(border[0]/2)-1, int((int(border[1])-len(message8))//2), message8, curses.A_BOLD)
+        win.addstr(int(border[0]/2), int((int(border[1])-len(message9))//2), message9, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+1, int((int(border[1])-len(message10))//2), message10, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+2, int((int(border[1])-len(message11))//2), message11, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+3, int((int(border[1])-len(message12))//2), message12, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+4, int((int(border[1])-len(message13))//2), message13, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+5, int((int(border[1])-len(message14))//2), message14, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+6, int((int(border[1])-len(message15))//2), message15, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+7, int((int(border[1])-len(message16))//2), message16, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+8, int((int(border[1])-len(message17))//2), message17, curses.A_BOLD)
+        win.addstr(int(border[0]/2)+11, int((int(border[1])-18)//2), "Press R to restart", curses.A_BOLD)
+        win.refresh()
+        win.clear
+    game()
 
 game()
 curses.endwin()
